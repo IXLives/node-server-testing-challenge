@@ -2,9 +2,11 @@
   "name": "node-server-testing",
   "version": "1.0.0",
   "description": "Node Server Testing Challenge",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "test": "jest --watch"
+    "test": "cross-env DB_ENV=testing jest --verbose --watch",
+    "server": "nodemon index.js",
+    "start": "node index.js"
   },
   "jest": {
     "testEnvironment": "node"
@@ -14,7 +16,7 @@
     "url": "git+https://github.com/LambdaSchool/node-server-testing.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "IX Lives",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/LambdaSchool/node-server-testing/issues"
@@ -25,6 +27,11 @@
     "supertest": "^4.0.2"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "cross-env": "^5.2.1",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "knex": "^0.19.4",
+    "nodemon": "^1.19.2",
+    "sqlite3": "^4.1.0"
   }
 }
